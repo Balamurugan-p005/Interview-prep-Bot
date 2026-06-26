@@ -1,8 +1,8 @@
-# 🤖 Interview Prep Bot — RAG + Claude AI
+# 🤖 Interview Prep Bot — RAG + GROQ AI
 
 A full-stack Interview Preparation Bot using:
 - **RAG** (Retrieval Augmented Generation) with FAISS vector store
-- **Claude claude-sonnet-4-6** as the LLM
+- **Groq AI** as the LLM
 - **sentence-transformers** for local embeddings (free, no OpenAI needed)
 - **FastAPI** backend + **React** frontend
 
@@ -24,8 +24,8 @@ interview-prep-bot/
 
 ## 🚀 Setup in VS Code
 
-### Step 1 — Get your Anthropic API Key
-1. Go to https://console.anthropic.com
+### Step 1 — Get your Groq API Key
+1. Go to https://console.Groq.com
 2. Create an API key
 3. Copy it
 
@@ -51,9 +51,9 @@ pip install -r requirements.txt
 
 # Set your API key as environment variable
 # Windows (PowerShell):
-$env:ANTHROPIC_API_KEY = "your-api-key-here"
+$env:GROQ_API_KEY = "your-api-key-here"
 # Mac/Linux:
-export ANTHROPIC_API_KEY="your-api-key-here"
+export GROQ_API_KEY="your-api-key-here"
 
 # Run the server
 python main.py
@@ -114,7 +114,7 @@ User Question
      ↓
 [3] Build prompt: question + retrieved context
      ↓
-[4] Claude claude-sonnet-4-6 generates structured answer
+[4] Groq AI generates structured answer
      ↓
 Response with Answer + Sources + Follow-ups
 ```
@@ -153,7 +153,7 @@ POST /upload
 | Problem | Fix |
 |---------|-----|
 | `ModuleNotFoundError` | Run `pip install -r requirements.txt` with venv active |
-| `ANTHROPIC_API_KEY not set` | Set the env variable before running `python main.py` |
+| `GROQ_API_KEY not set` | Set the env variable before running `python main.py` |
 | CORS error in browser | Make sure FastAPI is running, CORS is already configured |
 | Frontend can't connect | Check backend is running on port 8000 |
 | Slow first load | sentence-transformers downloads model on first run (~90MB) |
